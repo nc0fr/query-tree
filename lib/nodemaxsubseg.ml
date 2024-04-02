@@ -12,14 +12,19 @@ let create : data -> answer =
 
 let combine : node -> node -> node =
  fun left right ->
+  let max' a1 a2 a3 = max a1 (max a2 a3) in
+
   {
     answer =
+      (* Pour chaque champ, on prend le maximum entre la valeur du noeud gauche
+         et celle du noeud droit lorsqu'il est sommé avec le noeud gauche. *)
       {
         sum = left.answer.sum + right.answer.sum;
-        (* TODO(nc0): faire .prefix, .suffix et .subseg *)
-        prefix = 0;
-        suffix = 0;
-        subseg = 0;
+        prefix = max left.answer.prefix (left.answer.sum + right.answer.prefix);
+        suffix = max right.answer.suffix (right.answer.sum + left.answer.suffix);
+        subseg =
+          max' left.answer.subseg right.answer.subseg
+            (left.answer.suffix + right.answer.prefix);
       };
     left = min left.left right.left;
     right = max left.right right.right;
