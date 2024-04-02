@@ -1,3 +1,0 @@
-(test
- (name test_devoir_de_programmation)
- (libraries lib ounit2))
