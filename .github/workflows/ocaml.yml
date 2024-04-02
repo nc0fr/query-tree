@@ -14,7 +14,7 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         ocaml-compiler: ["4.11.0", "4.12.0", "5.1.0", "5.1.1"]
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v4
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # ratchet:actions/checkout@v4
       - name: Set up OCaml
         uses: ocaml/setup-ocaml@35a993375d51ca2dafcd2d8647716b7bb20bc37d # ratchet:ocaml/setup-ocaml@v2
         with:
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v4
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # ratchet:actions/checkout@v4
       - name: Set up OCaml
         uses: ocaml/setup-ocaml@35a993375d51ca2dafcd2d8647716b7bb20bc37d # ratchet:ocaml/setup-ocaml@v2
         with:
