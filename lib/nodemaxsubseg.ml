@@ -31,8 +31,5 @@ let combine : node -> node -> node =
   }
 
 let to_string : answer -> string =
- (* Suit le format du sujet *)
- fun answer ->
-  (* Application max sur N^4 *)
-  let max' a1 a2 a3 a4 = max a1 (max a2 (max a3 a4)) in
-  string_of_int (max' answer.sum answer.prefix answer.suffix answer.subseg)
+ (* Suit le format du sujet, le subseg est forcément le max. *)
+ fun answer -> string_of_int answer.subseg
